@@ -1,0 +1,15 @@
+{#此模板位于'Django代码目录'/'默认Django管理页面页面模板目录(django/contirb/admin/templates)'/admin/base_site.html#}
+{#查看Django代码目录: 命令行下: python -c "import django; print(django.__path__)"#}
+{#此模板用于管理后台界面, 这个例子为说明如何覆盖模板#}
+{#在实际项目中,使用django.contrib.admin.AdminSite.site_header属性来自定义标题更简单#}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+{#<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>#}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Polls Administration</a></h1>
+
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
